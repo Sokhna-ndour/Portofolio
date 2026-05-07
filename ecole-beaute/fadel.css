@@ -342,6 +342,15 @@ footer i {
     align-items: flex-start;
     gap: 10px;
   }
+  
+  body {
+    background-attachment: scroll;
+  }
+  
+  .about {
+    font-size: 1em;
+    margin: 30px auto;
+  }
 
   /* Réduire la taille du titre */
   .header h1 {
