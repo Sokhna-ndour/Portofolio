@@ -1,0 +1,353 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* en rapport avec l'ensemble des ecriture */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+/* pour l'image de l'arriere plan */
+body {
+  background-image: url('image/img7.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+/* pour pas que le nav se cole au rebord */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* header aligne le logo a gauche le menu a droite */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+/* colorer le logo EBP */
+.logo {
+  color: #C71585;
+  font-weight: bold;
+}
+
+/* pour le nav la disposition verticale */
+nav ul {
+  display: flex;
+  list-style: none;
+}
+/* pour distancialiser le nav(formations accueil..) */
+nav ul li {
+  margin-left: 20px;
+}
+/* pour le navbar (accueil..) */
+nav ul li a {
+  text-decoration: none;
+  color: #C71585;
+  font-weight: bold;
+}
+
+/* pour l'image de l'accueil */
+.banner {
+  background: url('image/img.jpg') no-repeat center center/cover;
+  color: white;
+  padding: 300px 200px;
+  text-align: center;
+}
+
+
+
+
+
+/* pour centrer a propos */
+.about {
+  text-align: center;
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 20px;
+  font-size: 1.5em;
+   margin-bottom: 10px; /* espace en dessous */
+}
+/* centrer l,ecriture nos formation dans la page d'accueil */
+.formations-preview h3 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* grille flexible pour les cartes de formation dans accueile */
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-left: 5px solid #C71585;
+  flex: 1;
+} 
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+/* pour l'animation des formation dans carte acceuil */
+.card:hover {
+  transform: translateY(-5px);
+}
+/* pour la dimension des ecritur dans carte */
+.card h4 {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+.card p {
+  font-size: 1em;
+  color: #555;
+}
+/* c'est pour le bouton nos formation dans accueil */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: #C71585;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  .formation-item-row {
+    flex-direction: column;
+    text-align: center;
+  }
+  .formation-item-row img {
+    width: 100%;
+    height: auto;
+  }
+  .btn-inscription {
+    width: 100%;
+  }
+}
+
+
+/* pour le grille dans la page formation */
+.formation-item-row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: #fff0f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 30px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+.formation-item-row:hover {
+  transform: scale(1.01);
+}
+
+/* pour le font transparent dans les grilles (page formation) */
+.formations-list {
+  background-color: rgba(255, 255, 255, 0.9); /* rend le fond blanc légèrement transparent */
+  padding: 40px;
+  border-radius: 10px;
+}
+
+/* pour les image de la page nos formation */
+.formation-item-row img {
+  width: 250px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+
+/* ca marche op */
+.formation-desc {
+  flex: 1;
+}
+/* pour les ecritures (stylysme..) */
+.formation-desc h3 {
+  margin-top: 0;
+  color: #b30059;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+/* pour les paragraphes en bas (stylisme..) */
+.formation-desc p {
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
+/* pour centrer nos formation dans la page formations */
+h2 {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 2.5em;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+
+/* bouton d'inscription */
+.btn-inscription {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #C71585;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: not-allowed;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+/* arche op */
+.btn-inscription:hover {
+  opacity: 1;
+}
+
+
+
+/* pour les images (stylisme..) pour que sa soit op trop gros */
+@media screen and (max-width: 768px) {
+  .formation-item-row {
+    flex-direction: column;
+    text-align: center;
+  }
+  /* sa marche op */
+  .formation-item-row img {
+    width: 100%;
+    height: auto;
+  }
+  /* sa marche op */
+  .btn-inscription {
+    width: 100%;
+  }
+}
+
+
+
+/* marche op */
+.form-container {
+  flex: 1;
+  min-width: 320px;
+}
+
+/* les dimension du formulaire */
+.map-contact-info {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+/* c'est pour la forme des ligne dans le formulaire */
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+/* pour le bouton envoye en bas de la formulaire */
+form button {
+  background-color: #C71585;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+/* message de succes */
+.success {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+/* essage d'erreur */
+.error {
+  color: red;
+  font-size: 0.9em;
+}
+.map-container iframe {
+  width: 100%;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+/* pour diviser la carte et le formulaire(gd) */
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px 0;
+}
+/* pour le font transparent dans la page contact */
+.contact-section {
+  background-color: rgba(255, 255, 255, 0.9); 
+  padding: 40px;
+  border-radius: 10px;
+}
+/* pour les info en bas de la carte */
+.contact-infos {
+  background-color: #fff0f5;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 0.95em;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+.contact-infos i {
+  color: #C71585;
+  margin-right: 8px;
+}
+
+
+/* Responsive */
+@media screen and (max-width: 100px) {
+  .contact-section {
+    flex-direction: column;
+  }
+}
+
+
+/* footer */
+footer {
+  background-color: #eb53c0;
+  color: #fff;
+  text-align: center;
+  padding: 10px 5px;
+  font-size: 0.8em;
+}
+
+footer .container p {
+  margin: 5px 0;
+}
+
+footer i {
+  margin-right: 5px;
+  color: #f3c4d4;
+}

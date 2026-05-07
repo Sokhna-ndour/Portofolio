@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact</title>
+  <link rel="stylesheet" href="fadel.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="java.js"> </script>
+</head>
+<body>
+  <header>
+    <div class="container header">
+      <h1><span class="logo">EBP</span> Ecole professionnelle de Beauté </h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="formations.html">Formations</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="container contact-section">
+    <div class="form-container">
+      <h2>Contactez-nous</h2>
+      <form id="contactForm">
+        <label>Prénom<input type="text" id="prenom" /></label>
+        <span class="error" id="prenomError"></span>
+
+        <label>Nom<input type="text" id="nom" /></label>
+        <span class="error" id="nomError"></span>
+
+        <label>Email<input type="email" id="email" /></label>
+        <span class="error" id="emailError"></span>
+
+        <label>Message<textarea id="message"></textarea></label>
+        <span class="error" id="messageError"></span>
+
+        <button type="submit">Envoyer</button>
+        <p class="success" id="successMessage"></p>
+      </form>
+    </div>
+
+    <div class="map-contact-info">
+      <div class="map-container">
+        <iframe src="https://maps.google.com/maps?q=Dakar&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                width="100%" height="350" style="border:0;" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="contact-infos">
+        <p><i class="bi bi-geo-alt-fill"></i> Adresse : Rue de la Beauté, Dakar, Sénégal</p>
+        <p><i class="bi bi-clock-fill"></i> Horaires : Lun–Ven : 9h–17h</p>
+        <p><i class="bi bi-telephone-fill"></i> Téléphone : +221 77 123 45 67</p>
+        <p><i class="bi bi-envelope-fill"></i> Email : contact@ecolebeaute.sn</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+        <p>
+        📍 Dakar, Sénégal |
+         +221 77 123 45 67 |
+         ✉ contact@ebp.sn
+        </p>
+      <p> 2025 École de Beauté Pro Tous droits reserves – Dakar, Sénégal</p>
+    </div>
+  </footer>
+
+  <script src="java.js"></script> 
+</body>
+</html>
