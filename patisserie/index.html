@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Douceur Dorée – Pâtisserie de luxe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="particles" id="particles"></div>
+
+  <header id="header">
+    <div class="container header-inner">
+      <div class="logo-container">
+        <div class="logo-icon">🎂</div>
+        <div class="logo-text">
+          <span class="logo-main">La Douceur</span>
+          <span class="logo-sub">Dorée</span>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Accueil</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="panier.html" class="panier-btn">🛒 Panier <span class="panier-count" id="panierCount">0</span></a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tag">✨ Pâtisserie Artisanale de Luxe</p>
+      <h1 class="hero-title">
+        L'Art du <span class="gold">Sucré</span><br>
+        <em>Réinventé</em>
+      </h1>
+      <p class="hero-desc">Chaque création est une œuvre d'art. Saveurs raffinées, ingrédients d'exception, livraison à Dakar.</p>
+      <div class="hero-btns">
+        <a href="boutique.html" class="btn-primary">Découvrir la boutique</a>
+        <a href="contact.html" class="btn-secondary">Nous contacter</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <section class="stats reveal">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <span class="stat-number">500+</span>
+        <span class="stat-label">Clients satisfaits</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">50+</span>
+        <span class="stat-label">Recettes exclusives</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">5★</span>
+        <span class="stat-label">Note moyenne</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">24h</span>
+        <span class="stat-label">Livraison Dakar</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured container">
+    <div class="section-header reveal">
+      <p class="section-tag">Nos Spécialités</p>
+      <h2>Produits <span class="gold">Vedettes</span></h2>
+      <div class="separator"></div>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="gateau au choclat noir acc.jpeg" alt="Gâteau au chocolat" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Gâteau Chocolat Noir', 15000)">Ajouter au panier</button>
+          </div>
+          <span class="product-badge">Best-seller</span>
+        </div>
+        <div class="product-info">
+          <h3>Gâteau Chocolat Noir</h3>
+          <p>Ganache intense, cœur fondant, copeaux de chocolat belge.</p>
+          <div class="product-footer">
+            <span class="price">15 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="tarte au fruits frais acc.jpeg" alt="Tarte aux fruits" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Tarte aux Fruits', 12000)">Ajouter au panier</button>
+          </div>
+          <span class="product-badge new">Nouveau</span>
+        </div>
+        <div class="product-info">
+          <h3>Tarte aux Fruits Frais</h3>
+          <p>Crème pâtissière vanille, fruits de saison, pâte sablée.</p>
+          <div class="product-footer">
+            <span class="price">12 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="boite macron acc.jpeg" alt="Macarons" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Boîte de Macarons', 8000)">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Boîte de Macarons</h3>
+          <p>12 macarons assortis, ganaches parfumées, coffret cadeau.</p>
+          <div class="product-footer">
+            <span class="price">8 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="mille feuille.jpeg" alt="mille feuille" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('mille feuille', 12000)">Ajouter au panier</button>
+          </div>
+          <span class="product-badge new">Nouveau</span>
+        </div>
+        <div class="product-info">
+          <h3>mille feuille</h3>
+          <p>Crème pâtissière vanille, fruits de saison, pâte sablée.</p>
+          <div class="product-footer">
+            <span class="price">12 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="center reveal">
+      <a href="boutique.html" class="btn-primary">Voir tous les produits</a>
+    </div>
+  </section>
+
+  <section class="why-us reveal">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Notre Engagement</p>
+        <h2>Pourquoi nous <span class="gold">choisir ?</span></h2>
+        <div class="separator"></div>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon">🌿</div>
+          <h3>Ingrédients naturels</h3>
+          <p>Nous sélectionnons les meilleurs ingrédients locaux et importés.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">👨‍🍳</div>
+          <h3>Artisans passionnés</h3>
+          <p>Nos pâtissiers créent chaque pièce avec amour et expertise.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">🚚</div>
+          <h3>Livraison rapide</h3>
+          <p>Livraison en 24h à Dakar. Fraîcheur garantie à domicile.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">🎁</div>
+          <h3>Coffrets cadeaux</h3>
+          <p>Packaging luxueux, parfait pour offrir à vos proches.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials container reveal">
+    <div class="section-header">
+      <p class="section-tag">Avis Clients</p>
+      <h2>Ils nous font <span class="gold">confiance</span></h2>
+      <div class="separator"></div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>"Le meilleur gâteau au chocolat que j'aie jamais goûté !"</p>
+        <span class="client-name">— Fatou D., Dakar</span>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>"Livraison rapide, packaging magnifique. Mes invités étaient impressionnés !"</p>
+        <span class="client-name">— Aminata S., Dakar</span>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>"Les macarons sont divins. Je recommande à toute ma famille !"</p>
+        <span class="client-name">— Moussa K., Dakar</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span class="logo-main">La Douceur</span>
+        <span class="logo-sub">Dorée</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="boutique.html">Boutique</a>
+        <a href="panier.html">Panier</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p class="footer-copy">© 2026 La Douceur Dorée – Dakar, Sénégal. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/221XXXXXXXXX?text=Bonjour%2C%20je%20voudrais%20commander%20!" 
+     class="whatsapp-float" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

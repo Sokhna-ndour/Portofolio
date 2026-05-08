@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – La Douceur Dorée</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="particles" id="particles"></div>
+
+  <header id="header">
+    <div class="container header-inner">
+      <div class="logo-container">
+        <div class="logo-icon">🎂</div>
+        <div class="logo-text">
+          <span class="logo-main">La Douceur</span>
+          <span class="logo-sub">Dorée</span>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="panier.html" class="panier-btn">🛒 Panier <span class="panier-count" id="panierCount">0</span></a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content reveal">
+      <p class="section-tag">Parlons-nous</p>
+      <h1>Nous <span class="gold">Contacter</span></h1>
+      <div class="separator"></div>
+    </div>
+  </section>
+
+  <section class="contact-section container">
+
+    <div class="contact-grid">
+
+      <!-- INFOS CONTACT -->
+      <div class="contact-info reveal">
+        <h2>Restons en <span class="gold">contact</span></h2>
+        <p class="contact-intro">Vous avez une question, une commande spéciale ou un événement à organiser ? Contactez-nous !</p>
+
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4>Adresse</h4>
+              <p>Dakar, Sénégal</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <h4>Téléphone</h4>
+              <p>+221 77 123 45 67</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <p>contact@ladouceurodoree.sn</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div>
+              <h4>Horaires</h4>
+              <p>Lun – Sam : 8h – 20h</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-socials">
+          <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
+          <a href="https://wa.me/221XXXXXXXXX" class="social-btn whatsapp"><i class="bi bi-whatsapp"></i></a>
+        </div>
+
+        <div class="map-container">
+          <iframe 
+            src="https://maps.google.com/maps?q=Dakar&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+            width="100%" height="250" style="border:0;" allowfullscreen loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- FORMULAIRE -->
+      <div class="contact-form-container reveal">
+        <h2>Envoyez-nous un <span class="gold">message</span></h2>
+        <form id="contactForm">
+          <div class="form-group">
+            <label>Nom complet</label>
+            <input type="text" id="nom" placeholder="Votre nom" />
+            <span class="error" id="nomError"></span>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="votre@email.com" />
+            <span class="error" id="emailError"></span>
+          </div>
+          <div class="form-group">
+            <label>Sujet</label>
+            <input type="text" id="sujet" placeholder="Objet de votre message" />
+            <span class="error" id="sujetError"></span>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea id="message" rows="5" placeholder="Votre message..."></textarea>
+            <span class="error" id="messageError"></span>
+          </div>
+          <button type="submit" class="btn-primary btn-submit">
+            Envoyer le message ✉️
+          </button>
+          <p class="success" id="successMessage"></p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span class="logo-main">La Douceur</span>
+        <span class="logo-sub">Dorée</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="boutique.html">Boutique</a>
+        <a href="panier.html">Panier</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p class="footer-copy">© 2026 La Douceur Dorée – Dakar, Sénégal. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/221XXXXXXXXX?text=Bonjour%2C%20je%20voudrais%20commander%20!" 
+     class="whatsapp-float" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

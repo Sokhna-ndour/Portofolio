@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boutique – La Douceur Dorée</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="particles" id="particles"></div>
+
+  <header id="header">
+    <div class="container header-inner">
+      <div class="logo-container">
+        <div class="logo-icon">🎂</div>
+        <div class="logo-text">
+          <span class="logo-main">La Douceur</span>
+          <span class="logo-sub">Dorée</span>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="boutique.html" class="active">Boutique</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="panier.html" class="panier-btn">🛒 Panier <span class="panier-count" id="panierCount">0</span></a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content reveal">
+      <p class="section-tag">Notre Sélection</p>
+      <h1>Notre <span class="gold">Boutique</span></h1>
+      <div class="separator"></div>
+    </div>
+  </section>
+
+  <section class="boutique container">
+
+    <div class="filtres reveal">
+      <button class="filtre-btn active" data-filtre="tous">Tous</button>
+      <button class="filtre-btn" data-filtre="gateaux">Gâteaux</button>
+      <button class="filtre-btn" data-filtre="tartes">Tartes</button>
+      <button class="filtre-btn" data-filtre="macarons">Macarons</button>
+      <button class="filtre-btn" data-filtre="coffrets">Coffrets</button>
+      <button class="filtre-btn" data-filtre="viennoiseries">Viiennoiseries</button>
+    </div>
+ 
+    <div class="products-grid">
+
+      <div class="product-card reveal" data-categorie="gateaux">
+        <div class="product-img">
+          <img src="gateau chocolat noir.jpeg" alt="Gâteau Chocolat Noir" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Gâteau Chocolat Noir', 15000)">Ajouter au panier</button>
+          </div>
+          <span class="product-badge">Best-seller</span>
+        </div>
+        <div class="product-info">
+          <h3>Gâteau Chocolat Noir</h3>
+          <p>Ganache intense, cœur fondant, copeaux de chocolat belge.</p>
+          <div class="product-footer">
+            <span class="price">15 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="tartes">
+        <div class="product-img">
+          <img src="tarte fraise.jpeg" alt="Tarte aux Fruits" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Tarte aux Fruits Frais', 12000)">Ajouter au panier</button>
+          </div>
+          <span class="product-badge new">Nouveau</span>
+        </div>
+        <div class="product-info">
+          <h3>Tarte aux Fruits Frais</h3>
+          <p>Crème pâtissière vanille, fruits de saison, pâte sablée.</p>
+          <div class="product-footer">
+            <span class="price">12 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="macarons">
+        <div class="product-img">
+          <img src="boite de macron.jpeg" alt="Macarons" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Boîte de Macarons', 8000)">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Boîte de Macarons</h3>
+          <p>12 macarons assortis, ganaches parfumées, coffret cadeau.</p>
+          <div class="product-footer">
+            <span class="price">8 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="gateaux">
+        <div class="product-img">
+          <img src="gateau vanille bourbon.jpeg" alt="Gâteau Vanille" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Gâteau Vanille Bourbon', 13000)">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Gâteau Vanille Bourbon</h3>
+          <p>Crème légère vanille de Madagascar, génoise moelleuse.</p>
+          <div class="product-footer">
+            <span class="price">13 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="viennoiseries">
+        <div class="product-img">
+          <img src="croissant.jpeg" alt="croissant" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Croissant', 1000)">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Croissant</h3>
+          <p> croissant croustillant et moelleuse a chaud.</p>
+          <div class="product-footer">
+            <span class="price">1 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="coffrets">
+        <div class="product-img">
+          <img src="coffret.jpeg" alt="Coffret Prestige" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Coffret Prestige', 25000)">Ajouter au panier</button>
+          </div>
+          <span class="product-badge">Exclusif</span>
+        </div>
+        <div class="product-info">
+          <h3>Coffret Prestige</h3>
+          <p>Sélection de nos meilleures créations dans un coffret luxueux.</p>
+          <div class="product-footer">
+            <span class="price">25 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="tartes">
+        <div class="product-img">
+          <img src="tarte citron.jpeg" alt="Tarte Citron" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Tarte Citron Meringuée', 10000)">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Tarte Citron Meringuée</h3>
+          <p>Lemon curd acidulé, meringue italienne dorée au chalumeau.</p>
+          <div class="product-footer">
+            <span class="price">10 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      
+
+
+      <!-- GATEAUX -->
+      <div class="product-card reveal" data-categorie="gateaux">
+        <div class="product-img">
+          <img src="gateau fraise.jpeg" alt="Gâteau Fraise" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Gâteau Fraise', 14000)">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Gâteau Fraise</h3>
+          <p>Génoise légère, crème chantilly, fraises fraîches du marché.</p>
+          <div class="product-footer">
+            <span class="price">14 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="gateaux">
+        <div class="product-img">
+          <img src="gateau caramel beurre.jpeg" alt="Gâteau Caramel" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Gâteau Caramel Beurre Salé', 16000)">Ajouter au panier</button>
+          </div>
+          <span class="product-badge">Exclusif</span>
+        </div>
+        <div class="product-info">
+          <h3>Gâteau Caramel Beurre Salé</h3>
+          <p>Caramel fondant, biscuit croustillant, mousse légère.</p>
+          <div class="product-footer">
+            <span class="price">16 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="gateaux">
+        <div class="product-img">
+          <img src="gateau moka.jpeg" alt="Gâteau Moka" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Gâteau Moka', 13000)">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Gâteau Moka</h3>
+          <p>Crème au beurre café, génoise imbibée, décor en amandes.</p>
+          <div class="product-footer">
+            <span class="price">13 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="gateaux">
+        <div class="product-img">
+          <img src="red velvet.jpeg" alt="Gâteau Red Velvet" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Red Velvet', 17000)">Ajouter au panier</button>
+          </div>
+          <span class="product-badge new">Nouveau</span>
+        </div>
+        <div class="product-info">
+          <h3>Red Velvet</h3>
+          <p>Biscuit rouge velouté, cream cheese frosting onctueux.</p>
+          <div class="product-footer">
+            <span class="price">17 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TARTES -->
+      <div class="product-card reveal" data-categorie="tartes">
+        <div class="product-img">
+          <img src="tarte chocolat.jpeg" alt="Tarte Chocolat" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Tarte Chocolat Noir', 11000)">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Tarte Chocolat Noir</h3>
+          <p>Ganache intense, pâte sablée croustillante, éclats de cacao.</p>
+          <div class="product-footer">
+            <span class="price">11 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="tartes">
+        <div class="product-img">
+          <img src="tarte mague passion.jpeg" alt="Tarte Mangue" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Tarte Mangue Passion', 12000)">Ajouter au panier</button>
+          </div>
+          <span class="product-badge new">Nouveau</span>
+        </div>
+        <div class="product-info">
+          <h3>Tarte Mangue Passion</h3>
+          <p>Mangues fraîches du Sénégal, crème passion exotique.</p>
+          <div class="product-footer">
+            <span class="price">12 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="tartes">
+        <div class="product-img">
+          <img src="tarte franbroise.jpeg" alt="Tarte Framboise" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Tarte Framboise', 11000)">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Tarte Framboise</h3>
+          <p>Framboises fraîches, crème pâtissière vanille, pâte dorée.</p>
+          <div class="product-footer">
+            <span class="price">11 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="tartes">
+        <div class="product-img">
+          <img src="tarte noix de coco.jpeg" alt="Tarte Noix de Coco" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Tarte Noix de Coco', 10000)">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Tarte Noix de Coco</h3>
+          <p>Crème coco onctueuse, noix de coco grillée, pâte croustillante.</p>
+          <div class="product-footer">
+            <span class="price">10 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MACARONS -->
+      <div class="product-card reveal" data-categorie="macarons">
+        <div class="product-img">
+          <img src="macaron chocolat.jpeg" alt="Macarons Chocolat" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Macarons Chocolat', 7000)">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Macarons Chocolat</h3>
+          <p>6 macarons ganache chocolat noir intense, coque dorée.</p>
+          <div class="product-footer">
+            <span class="price">7 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="macarons">
+        <div class="product-img">
+          <img src="macaron vanille.jpeg" alt="Macarons Vanille" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Macarons Vanille', 7000)">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Macarons Vanille</h3>
+          <p>6 macarons crème vanille bourbon de Madagascar.</p>
+          <div class="product-footer">
+            <span class="price">7 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="viennoiseries">
+        <div class="product-img">
+          <img src="croissant jambon.jpeg" alt="croissant" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Croissant', 2000)">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Croissant</h3>
+          <p> croissant croustillant et moelleuse a chaud.</p>
+          <div class="product-footer">
+            <span class="price">1 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="viennoiseries">
+        <div class="product-img">
+          <img src="pain au chocolat.jpeg" alt="croissant" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Croissant', 1000)">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Croissant</h3>
+          <p> croissant croustillant et moelleuse a chaud.</p>
+          <div class="product-footer">
+            <span class="price">1 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="macarons">
+        <div class="product-img">
+          <img src="macaron fraise.jpeg" alt="Macarons Fraise" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Macarons Fraise', 7000)">Ajouter au panier</button>
+          </div>
+          <span class="product-badge new">Nouveau</span>
+        </div>
+        <div class="product-info">
+          <h3>Macarons Fraise</h3>
+          <p>6 macarons ganache fraise fraîche, coque rose délicate.</p>
+          <div class="product-footer">
+            <span class="price">7 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="macarons">
+        <div class="product-img">
+          <img src="macaron citron.jpeg" alt="Macarons Citron" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Macarons Citron', 7000)">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Macarons Citron</h3>
+          <p>6 macarons lemon curd acidulé, coque jaune ensoleillée.</p>
+          <div class="product-footer">
+            <span class="price">7 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COFFRETS -->
+      <div class="product-card reveal" data-categorie="coffrets">
+        <div class="product-img">
+          <img src="coffret anniversaire.jpeg" alt="Coffret Anniversaire" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Coffret Anniversaire', 20000)">Ajouter au panier</button>
+          </div>
+          <span class="product-badge">Populaire</span>
+        </div>
+        <div class="product-info">
+          <h3>Coffret Anniversaire</h3>
+          <p>Gâteau + macarons + carte personnalisée dans un beau coffret.</p>
+          <div class="product-footer">
+            <span class="price">20 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="coffrets">
+        <div class="product-img">
+          <img src="coffret saint valentin.jpeg" alt="Coffret Saint Valentin" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Coffret Saint Valentin', 22000)">Ajouter au panier</button>
+          </div>
+          <span class="product-badge new">Nouveau</span>
+        </div>
+        <div class="product-info">
+          <h3>Coffret Saint Valentin</h3>
+          <p>Macarons roses + tarte framboise + chocolats fins.</p>
+          <div class="product-footer">
+            <span class="price">22 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="coffrets">
+        <div class="product-img">
+          <img src="coffret mariage.jpeg" alt="Coffret Mariage" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Coffret Mariage', 35000)">Ajouter au panier</button>
+          </div>
+          <span class="product-badge">Exclusif</span>
+        </div>
+        <div class="product-info">
+          <h3>Coffret Mariage</h3>
+          <p>Pièce montée + macarons assortis + décoration florale.</p>
+          <div class="product-footer">
+            <span class="price">35 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="coffrets">
+        <div class="product-img">
+          <img src="coffret enteprise.jpeg" alt="Coffret Entreprise" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Coffret Entreprise', 45000)">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Coffret Entreprise</h3>
+          <p>Idéal pour vos événements corporate, logo personnalisable.</p>
+          <div class="product-footer">
+            <span class="price">45 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="viennoiseries">
+        <div class="product-img">
+          <img src="cookie au 3 choclat.jpeg" alt="Cokie au 3 chocolat" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Cokie au 3 chocolat', 4000)">Ajouter au panier</button>
+          </div>
+           <span class="product-badge new">Best-seller</span>
+        </div>
+        <div class="product-info">
+          <h3>cookie au 3 chocolat</h3>
+          <p> .</p>
+          <div class="product-footer">
+            <span class="price">4 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="viennoiseries">
+        <div class="product-img">
+          <img src="eclaire au chocolat garni.jpeg" alt="Eclaire au chocolat garnie de creme" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Eclaire au chocolat garnie de creme', 4000)">Ajouter au panier</button>
+          </div>
+           <span class="product-badge new">Best-seller</span>
+        </div>
+        <div class="product-info">
+          <h3>Eclaire au chocolat garnie de creme</h3>
+          <p> .</p>
+          <div class="product-footer">
+            <span class="price">4 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="viennoiseries">
+        <div class="product-img">
+          <img src="pain resin.jpeg" alt="pain raisin" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('pain raisin', 1000)">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Pain raisin</h3>
+          <p> Pain raisin croustillant.</p>
+          <div class="product-footer">
+            <span class="price">1 000 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="viennoiseries">
+        <div class="product-img">
+          <img src="croissant amande.jpeg" alt="croissant au amande" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('croissant au amande', 1200)">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>croissant au amande</h3>
+          <p> .</p>
+          <div class="product-footer">
+            <span class="price">1 200 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-categorie="viennoiseries">
+        <div class="product-img">
+          <img src="cookie au nutelat.jpeg" alt="cookie au nutellat" />
+          <div class="product-overlay">
+            <button class="btn-ajouter" onclick="ajouterAuPanier('Cokie au nutellat', 2500)">Ajouter au panier</button>
+          </div>
+           <span class="product-badge new">Nouveau</span>
+        </div>
+        <div class="product-info">
+          <h3>cookie au nutellat</h3>
+          <p> .</p>
+          <div class="product-footer">
+            <span class="price">2 500 FCFA</span>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span class="logo-main">La Douceur</span>
+        <span class="logo-sub">Dorée</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="boutique.html">Boutique</a>
+        <a href="panier.html">Panier</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p class="footer-copy">© 2026 La Douceur Dorée – Dakar, Sénégal. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/221XXXXXXXXX?text=Bonjour%2C%20je%20voudrais%20commander%20!" 
+     class="whatsapp-float" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

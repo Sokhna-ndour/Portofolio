@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panier – La Douceur Dorée</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="particles" id="particles"></div>
+
+  <header id="header">
+    <div class="container header-inner">
+      <div class="logo-container">
+        <div class="logo-icon">🎂</div>
+        <div class="logo-text">
+          <span class="logo-main">La Douceur</span>
+          <span class="logo-sub">Dorée</span>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="panier.html" class="panier-btn active">🛒 Panier <span class="panier-count" id="panierCount">0</span></a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content reveal">
+      <p class="section-tag">Votre Sélection</p>
+      <h1>Mon <span class="gold">Panier</span></h1>
+      <div class="separator"></div>
+    </div>
+  </section>
+
+  <section class="panier-section container">
+
+    <div class="panier-container">
+
+      <!-- LISTE DES ARTICLES -->
+      <div class="panier-articles reveal">
+        <h2>Articles <span class="gold">sélectionnés</span></h2>
+        <div id="panierListe"></div>
+        <div class="panier-vide" id="panierVide">
+          <span>🛒</span>
+          <p>Votre panier est vide</p>
+          <a href="boutique.html" class="btn-primary">Voir la boutique</a>
+        </div>
+      </div>
+
+      <!-- RESUME COMMANDE -->
+      <div class="panier-resume reveal">
+        <h2>Résumé de la <span class="gold">commande</span></h2>
+        <div class="resume-details">
+          <div class="resume-ligne">
+            <span>Sous-total</span>
+            <span id="sousTotal">0 FCFA</span>
+          </div>
+          <div class="resume-ligne">
+            <span>Livraison</span>
+            <span>2 000 FCFA</span>
+          </div>
+          <div class="resume-ligne total">
+            <span>Total</span>
+            <span id="totalFinal">0 FCFA</span>
+          </div>
+        </div>
+
+        <!-- FORMULAIRE COMMANDE -->
+        <div class="commande-form">
+          <h3>Informations de <span class="gold">livraison</span></h3>
+          <input type="text" id="cmdNom" placeholder="Votre nom complet" />
+          <span class="error" id="cmdNomError"></span>
+          <input type="tel" id="cmdTel" placeholder="Votre numéro WhatsApp" />
+          <span class="error" id="cmdTelError"></span>
+          <input type="text" id="cmdAdresse" placeholder="Votre adresse à Dakar" />
+          <span class="error" id="cmdAdresseError"></span>
+          <textarea id="cmdNote" placeholder="Note pour la commande (optionnel)"></textarea>
+          <button class="btn-primary btn-commander" id="btnCommander" onclick="passerCommande()">
+            ✅ Confirmer la commande
+          </button>
+          <p class="success" id="cmdSuccess"></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span class="logo-main">La Douceur</span>
+        <span class="logo-sub">Dorée</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="boutique.html">Boutique</a>
+        <a href="panier.html">Panier</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p class="footer-copy">© 2026 La Douceur Dorée – Dakar, Sénégal. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/221XXXXXXXXX?text=Bonjour%2C%20je%20voudrais%20commander%20!" 
+     class="whatsapp-float" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
