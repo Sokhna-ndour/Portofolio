@@ -252,7 +252,7 @@ if (contactForm) {
           email: email,
           message: message
         }),
-        headers: { 'Accept': 'application/json', 'Content-Type'= 'application/json' }
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
       });
 
       if (response.ok) {
