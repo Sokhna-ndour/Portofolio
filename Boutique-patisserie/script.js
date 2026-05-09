@@ -258,6 +258,9 @@ if (contactForm) {
       if (response.ok) {
         document.getElementById('successMessage').textContent = '✅ Message envoyé ! Nous vous répondrons bientôt.';
         contactForm.reset();
+        setTimeout(() => {
+         document.getElementById('successMessage').textContent = '';
+        }, 2000);
       } else {
         document.getElementById('successMessage').textContent = '❌ Erreur, réessayez.';
       }
