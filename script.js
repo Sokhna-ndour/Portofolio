@@ -83,7 +83,10 @@ if (contactForm) {
     });
 
     if (response.ok) {
-      alert(`Merci ${nom} ! Votre message a bien été envoyé.`);
+      document.getElementById('successMessage').textContent = '✅ Message envoyé ! Merci.';
+       setTimeout(() => {
+         document.getElementById('successMessage').textContent = '';
+      }, 2000);
       document.querySelectorAll('.form-input, .form-textarea').forEach(el => el.value = '');
     } else {
       alert('Erreur, réessayez.');
