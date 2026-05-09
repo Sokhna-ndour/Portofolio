@@ -59,18 +59,34 @@ window.addEventListener('scroll', () => {
 });
 
 // FORMULAIRE CONTACT
-function envoyerMessage() {
-  const nom     = document.querySelector('.form-input[placeholder="Votre nom"]').value.trim();
-  const email   = document.querySelector('.form-input[placeholder="votre@email.com"]').value.trim();
-  const message = document.querySelector('.form-textarea').value.trim();
+// FORMULAIRE CONTACT
+const contactForm = document.querySelector('form');
+if (contactForm) {
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
 
-  if (!nom || !email || !message) {
-    alert('Merci de remplir tous les champs.'); return;
-  }
-  if (!email.includes('@')) {
-    alert('Veuillez entrer un email valide.'); return;
-  }
+    const nom = document.querySelector('.form-input[placeholder="Votre nom"]').value.trim();
+    const email = document.querySelector('.form-input[placeholder="votre@email.com"]').value.trim();
+    const message = document.querySelector('.form-textarea').value.trim();
 
-  alert(`Merci ${nom} ! Votre message a bien été envoyé.`);
-  document.querySelectorAll('.form-input, .form-textarea').forEach(el => el.value = '');
+    if (!nom || !email || !message) {
+      alert('Merci de remplir tous les champs.'); return;
+    }
+    if (!email.includes('@')) {
+      alert('Veuillez entrer un email valide.'); return;
+    }
+
+    const response = await fetch('https://formspree.io/f/mzdovnwd', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nom, email, message })
+    });
+
+    if (response.ok) {
+      alert(`Merci ${nom} ! Votre message a bien été envoyé.`);
+      document.querySelectorAll('.form-input, .form-textarea').forEach(el => el.value = '');
+    } else {
+      alert('Erreur, réessayez.');
+    }
+  });
 }
