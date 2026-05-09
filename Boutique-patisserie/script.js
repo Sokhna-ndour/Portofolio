@@ -247,8 +247,12 @@ if (contactForm) {
     if (valid) {
       const response = await fetch(contactForm.action, {
         method: 'POST',
-        body: new FormData(contactForm),
-        headers: { 'Accept': 'application/json' }
+        body: JSON.stringify({
+          nom: nom,
+          email: email,
+          message: message
+        }),
+        headers: { 'Accept': 'application/json', 'Content-Type'= 'application/json' }
       });
 
       if (response.ok) {
