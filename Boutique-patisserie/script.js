@@ -214,7 +214,7 @@ filtresBtns.forEach(btn => {
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
+    
     const nom = document.getElementById('nom').value.trim();
     const email = document.getElementById('email').value.trim();
     const sujet = document.getElementById('sujet') ? document.getElementById('sujet').value.trim() : 'ok';
@@ -252,9 +252,8 @@ if (contactForm) {
       document.getElementById('messageError').textContent = '';
     }
 
-    if (valid) {
-      document.getElementById('successMessage').textContent = '✅ Message envoyé ! Nous vous répondrons bientôt.';
-      contactForm.reset();
+    if (!valid) {
+      e.preventDefault();
     }
   });
 }
