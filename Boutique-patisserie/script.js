@@ -181,7 +181,7 @@ function passerCommande() {
     });
     message += `\nNom : ${nom.value}\nTél : ${tel.value}\nAdresse : ${adresse.value}`;
 
-    const url = `https://wa.me/221XXXXXXXXX?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/221771767629?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 
     panier = [];
