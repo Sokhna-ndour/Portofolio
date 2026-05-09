@@ -210,14 +210,15 @@ filtresBtns.forEach(btn => {
   });
 });
 
+
 // ========== FORMULAIRE CONTACT ==========
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
     
     const nom = document.getElementById('nom').value.trim();
     const email = document.getElementById('email').value.trim();
-    const sujet = document.getElementById('sujet') ? document.getElementById('sujet').value.trim() : 'ok';
     const message = document.getElementById('message').value.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     let valid = true;
@@ -236,15 +237,6 @@ if (contactForm) {
       document.getElementById('emailError').textContent = '';
     }
 
-    if (sujet === '') {
-      document.getElementById('sujetError').textContent = 'Sujet requis';
-      valid = false;
-    } else {
-      if (document.getElementById('sujetError')) {
-        document.getElementById('sujetError').textContent = '';
-      }
-    }
-
     if (message.length < 10) {
       document.getElementById('messageError').textContent = 'Message trop court';
       valid = false;
@@ -252,8 +244,19 @@ if (contactForm) {
       document.getElementById('messageError').textContent = '';
     }
 
-    if (!valid) {
-      e.preventDefault();
+    if (valid) {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        document.getElementById('successMessage').textContent = '✅ Message envoyé ! Nous vous répondrons bientôt.';
+        contactForm.reset();
+      } else {
+        document.getElementById('successMessage').textContent = '❌ Erreur, réessayez.';
+      }
     }
   });
 }
